@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             Title="Camera"
+             x:Class="DippCamera.CameraPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- vyvolání náhledu kamery  -->
+            <xct:CameraView 
+            x:Name="xctCameraView"
+                CaptureMode="Photo"
+                MediaCaptured="XctCameraView_MediaCaptured"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="Yellow"
+                />
+            <Button Text="Capture" Clicked="CaptureImageBtn" x:Name="captureBtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

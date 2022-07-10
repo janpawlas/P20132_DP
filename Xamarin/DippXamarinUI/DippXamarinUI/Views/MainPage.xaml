@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="DippXamarinUI.Views.MainPage"
+             Title="Form">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!--Implementace formuláře -->
+        <ScrollView Padding="10">
+            <StackLayout>
+                <StackLayout Spacing="-10">
+                    <Label Text="Text" />
+                    <Entry x:Name="entryText" Placeholder="I am an Entry" />
+                </StackLayout>
+                <StackLayout Spacing="-10">
+                    <Label Text="Number" />
+                    <Entry x:Name="entryNumber" Placeholder="I am an Number" Keyboard="Numeric"/>
+                </StackLayout>
+                <StackLayout Spacing="-10">
+                    <Label Text="Password" />
+                    <Entry x:Name="entryPassword" Placeholder="Password" IsPassword="True"/>
+                </StackLayout>
+                <StackLayout Spacing="-10">
+                    <Label Text="Date Picker"/>
+                    <DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}" x:Name="entryDate">
+                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                        <DatePicker.MinimumDate>
+                            <sys:DateTime x:FactoryMethod="Parse">
+                                <x:Arguments>
+                                    <x:String>Jan 1 2000</x:String>
+                                </x:Arguments>
+                            </sys:DateTime>
+                        </DatePicker.MinimumDate>
+                        <DatePicker.MaximumDate>
+                            <sys:DateTime x:FactoryMethod="Parse">
+                                <x:Arguments>
+                                    <x:String>Dec 31 2050</x:String>
+                                </x:Arguments>
+                            </sys:DateTime>
+                        </DatePicker.MaximumDate>
+                    </DatePicker>
+                </StackLayout>
+                <StackLayout Spacing="-10">
+                    <Label Text="Time Picker" />
+                    <TimePicker Time="9:00:00" Format="t" x:Name="entryTime"/>
+                </StackLayout>
+                <StackLayout Spacing="-10">
+                    <Label Text="Picker" />
+                    <Picker x:Name="picker" Title="Select an option" />
+                </StackLayout>
+                <StackLayout Spacing="1" RadioButtonGroup.GroupName="radioGroup" x:Name="entryRadioGroup">
+                    <Label Text="Radio" />
+                    <RadioButton Content="Option 1" IsChecked="true" Value="Option 1" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 2" Value="Option 2" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 3" Value="Option 3" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 4" Value="Option 4" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 5" Value="Option 5" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 6" Value="Option 6" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 7" Value="Option 7" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 8" Value="Option 8" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 9" Value="Option 9" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                    <RadioButton Content="Option 10" Value="Option 10" CheckedChanged="OnColorsRadioButtonCheckedChanged"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Switch" VerticalTextAlignment="Center"/>
+                    <Switch IsToggled="true" x:Name="entrySwitch"/>
+                </StackLayout>
+                <StackLayout Spacing="1" Orientation="Horizontal">
+                    <CheckBox x:Name="checkbox"  />
+                    <Label Text="Checkbox" VerticalTextAlignment="Center" x:Name="entryCheckbox" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Save"
+                        Clicked="Button_Clicked"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"/>
+                    <Button Text="Reset"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+            
+
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

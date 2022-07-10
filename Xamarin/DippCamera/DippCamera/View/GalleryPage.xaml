@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DippCamera.Model"
+             x:Class="DippCamera.GalleryPage"
+             Title="Gallery">
+    <ContentPage.Content>
+     <StackLayout>
+            <Image  Aspect="AspectFill" x:Name="imageView"></Image>
+            <Label Text="{Binding Path=(local:SavedImages.name)}" TextColor="Black" FontSize="20" IsVisible="True"></Label>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
